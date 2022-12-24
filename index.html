@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication-login</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <p>Header</p>
+        <div class="navigationbar">
+            <ul>
+               <a href="index.html"><li>SignUp</li></a> 
+               <a href="profile.html"> <li>Profile</li></a>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="contant">
+        <h3>SignUp</h3>
+        <form class="login" id="form">
+            <input type="text" id="fname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="pass" placeholder="Password" required>
+            <input type="password" id="cpass" placeholder="Confirm Password" required>
+            <p class="mandatory">All fields are mandatory</p>
+            <p class="succefullly">Sign up succefullly</p>
+            <button id="btn" type="submit">Signup</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('form')
+        const username = document.getElementById('fname')
+        const useremail = document.getElementById('email')
+        const userpass = document.getElementById('pass')
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const usernameValue = username.value
+            const useremailValue = useremail.value
+            const userpassValue = userpass.value
+
+            localStorage.setItem('user-name', usernameValue)
+            localStorage.setItem('user-email', useremailValue)
+            localStorage.setItem('user-pass', userpassValue)
+
+
+            window.location.href = 'profile.html'
+        })
+    </script>
+</body>
+
+</html>

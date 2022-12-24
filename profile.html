@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <p>Header</p>
+        <div class="navigationbar">
+            <ul>
+                <a href="index.html"><li>SignUp</li></a> 
+                <a href="profile.html"> <li>Profile</li></a>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="contant2">
+        <div class="paragraph">
+            <p id="profile">Profile</p>
+            <div class="result" class="name">Full Name: <span id="user-name"></span></div>
+            <div class="reemail" class="email">Email: <span id="user-email"></span></div>
+            <div class="repassword" class="password">Password: <span id="user-pass"></span></div>
+            <button id="clear" class="logbtn" type="reset">Logout</button>
+        </div>
+
+    </div>
+    <script>
+        const username = localStorage.getItem('user-name')
+        const useremail = localStorage.getItem('user-email')
+        const userpass = localStorage.getItem('user-pass')
+
+
+        document.getElementById('user-name').textContent=username
+        document.getElementById('user-email').textContent=useremail
+        document.getElementById('user-pass').textContent=userpass
+
+
+        document.getElementById("clear").addEventListener("click", () => {
+  localStorage.removeItem('user-name');
+  localStorage.removeItem('user-email');
+  localStorage.removeItem('user-pass');
+//   localStorage.removeItem('usercpass');
+        })
+        // document.getElementById('clear').reset();
+    </script>
+</body>
+
+</html>
